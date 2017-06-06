@@ -1,0 +1,49 @@
+﻿<%@ Master Language="VB" %>
+
+<!DOCTYPE html>
+<html lang="en">
+<head runat="server">
+    <meta charset="utf-8" />     
+    <title><%: Page.Title %> - Rhythm7.com</title>
+    <link href="~/Content/Site.css" rel="stylesheet" /> 
+</head>
+<body>
+    <form id="Form1" runat="server">
+        <header>
+            <div class="content-wrapper">
+                <div style="text-align: center">
+                    <img src="<%=ResolveClientUrl("Images/logo.png")%>" alt="Rhythm7" />
+                </div>
+                <div style="text-align: center">                
+                    <nav>
+                        <ul id="menu">
+                            <li><a id="A1" runat="server" href="Default.aspx">Home</a></li>
+                            <li><a id="A2" runat="server" href="Product/Default.aspx">Product</a></li>
+                            <li><a id="A3" runat="server" href="Technique/Default.aspx">Technique</a></li>
+                            <li><a id="A4" runat="server" href="Contact.aspx">Contact</a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </header>
+        <div id="body" class="content-wrapper">
+            <div style="background: green; color: #fff; width: 960px; height: 504px; ">
+                <table style="width: 100%;">
+                    <tr>
+                        <td style="vertical-align: top">
+                            <asp:ContentPlaceHolder runat="server" ID="SideMenu" />                                            
+                        </td>
+                        <td style="vertical-align: top">
+                            <asp:ContentPlaceHolder runat="server" ID="MainContent" />
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div style="text-align:center; background-color: #000;">
+                <asp:ContentPlaceHolder runat="server" ID="PagingContent" />
+                 <span style="color: #fff;">© <%: DateTime.Now.Year %> Rhythm7.com</span>
+            </div>        
+        </div>
+    </form>    
+</body>    
+</html>
